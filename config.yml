@@ -1,0 +1,32 @@
+# AI-Doc-Reviewer Configuration
+
+model: "gemini-4-argon"
+temperature: 0.2
+max_patch_chars: 15000
+
+supported_extensions:
+  - ".py"
+  - ".js"
+  - ".ts"
+  - ".jsx"
+  - ".tsx"
+  - ".go"
+  - ".rs"
+  - ".java"
+  - ".cpp"
+
+excluded_paths:
+  - "venv/"
+  - ".venv/"
+  - "node_modules/"
+  - "dist/"
+  - "build/"
+  - "__pycache__/"
+  - "package-lock.json"
+  - "poetry.lock"
+
+review_focus:
+  - "Logic errors, unhandled exceptions, and edge cases"
+  - "Security risks, hardcoded secrets, and injection vulnerabilities"
+  - "Missing or outdated function/class docstrings (generate complete replacements)"
+  - "Code maintainability, naming clarity, and algorithmic efficiency"
